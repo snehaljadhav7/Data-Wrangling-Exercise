@@ -25,7 +25,7 @@ def daily_data():
     for k in price_dict:
         for item in zip(k, price_dict[k]):
             price_list.append(item)
-    df = pd.DataFrame(price_list, columns=['Dates', 'Prices'])
+    df = pd.DataFrame(price_list, columns=['Date', 'Price'])
     df.to_csv('natural_gas_prices_daily.csv', index=False)
 
 
@@ -56,7 +56,7 @@ def monthly_data():
         for i, price in enumerate(price_dict[key]):
             date = "1-" + month_list[i] + "-" + key
             price_list.append((date, price))
-    df = pd.DataFrame(price_list, columns=['Dates', 'Prices'])
+    df = pd.DataFrame(price_list, columns=['Date', 'Price'])
 
     df.to_csv('natural_gas_prices_monthly.csv', index=False)
 
